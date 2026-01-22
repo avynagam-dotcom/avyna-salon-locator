@@ -1,0 +1,36 @@
+// Script para generar iconos PNG desde SVG
+// Requiere: npm install sharp
+// Ejecutar: node scripts/generate-icons.js
+
+const sharp = require('sharp');
+const fs = require('fs');
+const path = require('path');
+
+const sizes = [72, 96, 128, 144, 152, 192, 384, 512];
+const svgPath = path.join(__dirname, '../public/icons/icon.svg');
+const outputDir = path.join(__dirname, '../public/icons');
+
+// Asegurar que el directorio existe
+if (!fs.existsSync(outputDir)) {
+  fs.mkdirSync(outputDir, { recursive: true });
+}
+
+async function generateIcons() {
+  const svgBuffer = fs.readFileSync(svgPath);
+  
+  for (const size of sizes) {
+    try {
+      await sharp(svgBuffer)
+        .resize(size, size)
+        .png()
+        .toFile(path.join(outputDir, `icon-${size}x${size}.png`));
+      console.log(`✅ Generado: icon-${size}x${size}.png`);
+    } catch (error) {
+      console.error(`❌ Error generando icon-${size}x${size}.png:`, error);
+    }
+  }
+  
+  console.log('\n🎉 ¡Todos los iconos generados!');
+}
+
+generateIcons();

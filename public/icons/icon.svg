@@ -1,0 +1,65 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradiente dorado para el fondo -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8941F;stop-opacity:1" />
+    </linearGradient>
+    <!-- Sombra para el pin -->
+    <filter id="shadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="4" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Fondo circular con gradiente dorado -->
+  <circle cx="256" cy="256" r="256" fill="url(#bgGradient)"/>
+  
+  <!-- Pin de ubicación (verde) con sombra -->
+  <g filter="url(#shadow)">
+    <path d="M256 100C190 100 140 150 140 216C140 282 256 420 256 420C256 420 372 282 372 216C372 150 322 100 256 100Z" fill="#22C55E" stroke="#FFFFFF" stroke-width="10"/>
+    
+    <!-- Círculo interior del pin -->
+    <circle cx="256" cy="216" r="50" fill="#FFFFFF"/>
+    <circle cx="256" cy="216" r="42" fill="#22C55E"/>
+  </g>
+  
+  <!-- Tijeras estilizadas en el centro -->
+  <g transform="translate(256, 216)">
+    <!-- Tijeras izquierdas -->
+    <g transform="rotate(-15)">
+      <!-- Hoja superior izquierda -->
+      <path d="M-30 -20 L-18 -8 L-8 -18 L-18 -30 Z" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="1.5"/>
+      <!-- Hoja inferior izquierda -->
+      <path d="M-30 20 L-18 8 L-8 18 L-18 30 Z" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="1.5"/>
+      <!-- Mango izquierdo -->
+      <ellipse cx="-18" cy="0" rx="4" ry="28" fill="#0A0A0A"/>
+    </g>
+    
+    <!-- Tijeras derechas -->
+    <g transform="rotate(15)">
+      <!-- Hoja superior derecha -->
+      <path d="M30 -20 L18 -8 L8 -18 L18 -30 Z" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="1.5"/>
+      <!-- Hoja inferior derecha -->
+      <path d="M30 20 L18 8 L8 18 L18 30 Z" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="1.5"/>
+      <!-- Mango derecho -->
+      <ellipse cx="18" cy="0" rx="4" ry="28" fill="#0A0A0A"/>
+    </g>
+    
+    <!-- Punto central (eje de las tijeras) -->
+    <circle cx="0" cy="0" r="6" fill="#0A0A0A"/>
+  </g>
+  
+  <!-- Puntos decorativos (estilo Avyna) -->
+  <circle cx="160" cy="120" r="5" fill="#FFFFFF" opacity="0.9"/>
+  <circle cx="352" cy="120" r="5" fill="#FFFFFF" opacity="0.9"/>
+  <circle cx="160" cy="392" r="5" fill="#FFFFFF" opacity="0.9"/>
+  <circle cx="352" cy="392" r="5" fill="#FFFFFF" opacity="0.9"/>
+</svg>
