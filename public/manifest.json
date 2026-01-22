@@ -1,6 +1,7 @@
 {
   "name": "Avyna - Localizador de Salones",
   "short_name": "Avyna Salones",
+  "scope": "/",
   "description": "Encuentra salones autorizados Avyna en la Alcaldía Gustavo A. Madero",
   "start_url": "/",
   "display": "standalone",
