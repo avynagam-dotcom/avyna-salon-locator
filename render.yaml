@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: avyna-salon-locator
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+    # Si usas Google Sheets, agrega aquí:
+    # - key: NEXT_PUBLIC_CSV_URL
+    #   value: tu_url_aqui

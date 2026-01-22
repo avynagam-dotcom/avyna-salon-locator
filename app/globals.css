@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-avyna-white text-avyna-black antialiased;
+  }
+}
+
+/* Leaflet CSS Fix */
+@import 'leaflet/dist/leaflet.css';
+
+/* Leaflet Map Styles */
+.leaflet-container {
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  padding: 0;
+}
+
+.custom-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-avyna-white;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-avyna-silver rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-avyna-gold;
+}
